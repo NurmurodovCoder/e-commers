@@ -32,10 +32,11 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     'rest_framework',
-    'app',
+    # 'app',
     'courses',
     'library',
-    'news'
+    'news',
+    'user_app'
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,7 @@ INTERNAL_IPS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
 ]
+
+AUTH_USER_MODEL = "user_app.CustomUser"
+
+

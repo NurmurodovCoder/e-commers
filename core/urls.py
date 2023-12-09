@@ -27,11 +27,11 @@ urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
 
     path('admin/', admin.site.urls),
-    path('user/', include('app.urls')),
+    # path('user/', include('app.urls')),
     path('news/', include('news.urls')),
     path('course/', include('courses.urls')),
     path('library/', include('library.urls')),
-
+    path('user/', include('user_app.urls')),
 
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

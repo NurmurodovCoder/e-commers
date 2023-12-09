@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.conf import settings
 
 class Level(models.TextChoices):
     beginner = 'Beginner',
@@ -86,7 +86,7 @@ class Lesson(models.Model):
 
 class Comments(models.Model):
     title = models.CharField(max_length=300)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comment')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='comment')
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comment')
     rating = models.IntegerField(default=1)
 
